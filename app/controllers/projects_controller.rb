@@ -38,6 +38,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :description, :goal, :end_date)
+    params.require(:project).permit(:name, :description, :goal, :end_date,
+                                    rewards_attributes: [:title, :description, :amount, :_destroy])
   end
 end
