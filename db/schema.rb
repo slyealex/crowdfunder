@@ -11,7 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222193440) do
+ActiveRecord::Schema.define(version: 20160222195736) do
+
+  create_table "pledges", force: :cascade do |t|
+    t.integer  "amount"
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "pledges", ["project_id"], name: "index_pledges_on_project_id"
+  add_index "pledges", ["user_id"], name: "index_pledges_on_user_id"
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "goal"
+    t.datetime "end_date"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id"
+
+  create_table "rewards", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "amount"
+    t.integer  "project_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "rewards", ["project_id"], name: "index_rewards_on_project_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
