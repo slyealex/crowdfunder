@@ -1,0 +1,10 @@
+<% @project.rewards.each do |reward| %>
+ <div class="reward">
+   <p>
+     <%= reward.name %>
+     <%= reward.description %>
+     <%= reward.amount %>
+   </p>
+     <br>
+ </div>
+<% end %>
