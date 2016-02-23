@@ -2,10 +2,18 @@
 <div>
   <p><%= @project.name %></p>
   <p><%= @project.description %></p>
-  <p><%= @project.goal %></p>
   <p><%= @project.end_date %></p>
 </div>
 
-<div>
+<h1><%= @project.goal %></h1>
+
+<h2>Amount raised:</h2>
+<p><%= @project.pledges.sum(:amount) %></p><br>
+
+<div class="reward">
   <%= render 'reward' %>
+
+  <div id="pledge-list">
+    <%= render partial: 'pledges' %>
+  </div>
 </div>
