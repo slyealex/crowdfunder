@@ -7,8 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
   <ul>
-    <!-- <li><%= link_to "Sign Up", new_user_path %></li> -->
     <li><%= link_to 'Home', projects_path %></li>
     <li><%= link_to 'New Project', new_project_path %></li>
     <li>
@@ -25,7 +25,19 @@
 
 
   </ul>
+
   <%= yield %>
+
+
+  <div class="container">
+    <p class="userinfo">
+      <% if current_user %>
+        Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+      <% else %>
+        <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
+      <% end %>
+    </p>
+  </div>
 
 </body>
 </html>

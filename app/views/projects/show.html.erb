@@ -2,12 +2,19 @@
 <div>
   <h1><%= @project.name %></h1>
   <p><%= @project.description %></p>
-  <p><%= @project.goal %></p>
   <p><%= @project.end_date %></p>
-</div>
+  <h1>GOAL: $<%= @project.goal %></h1><br>
 
-<div>
+  <h2 id="total-amount">Amount raised: $<%= @project.total_amount %></h2>
+</div><br>
+
+
+<div class="reward">
   <%= render 'reward' %>
+
+  <div id="pledge-list">
+    <%= render partial: 'pledges' %>
+  </div>
 </div>
 
 <!-- <%= link_to 'Edit', edit_project_path(@project) %> | -->
