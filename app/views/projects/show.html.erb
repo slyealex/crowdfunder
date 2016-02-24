@@ -1,13 +1,12 @@
 
 <div>
-  <p><%= @project.name %></p>
+  <h1><%= @project.name %></h1>
   <p><%= @project.description %></p>
   <p><%= @project.end_date %></p>
-</div>
+  <h1>GOAL: $<%= @project.goal %></h1><br>
 
-<h1>GOAL: $<%= @project.goal %></h1>
-
-<h2 id="total-amount">Amount raised: $<%= @project.total_amount %></h2>
+  <h2 id="total-amount">Amount raised: $<%= @project.total_amount %></h2>
+</div><br>
 
 
 <div class="reward">
