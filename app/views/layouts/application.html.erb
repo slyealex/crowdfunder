@@ -9,24 +9,20 @@
 <body>
 
   <ul>
-    <li><%= link_to 'Home', projects_path %></li>
-    <li><%= link_to 'New Project', new_project_path %></li>
-    <li>
-      <p class="userinfo">
-        <% if current_user %>
-          Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
-        <% else %>
-          <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
-        <% end %>
-      </p>
-    </li>
 
-
-
+    <!-- <li><%= link_to "Sign Up", new_user_path %></li> -->
+    <li class="nav"><%= link_to 'Home', projects_path %></li>
+    <li class="nav"><%= link_to 'New Project', new_project_path %></li>
+    <li class="nav">
+      <% if current_user %> Signed in as <%= current_user.email %>.
+        <%= link_to "Log out", session_path("current"), :method => :delete %> </li>
+      <% else %>
+  <li class="nav"><%= link_to "Log in", new_session_path %> </li>
+  <li class="nav"><%= link_to "Sign up", new_user_path %> <% end %> </li>
 
   </ul>
 
-  <%= yield %>
+<p><%= yield %></p>
 
 
 </body>
