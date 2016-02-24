@@ -1,1 +1,3 @@
-$("#pledge-list").html("<%=j render(:partial => 'projects/pledges') %>");
+$("#pledge-list").html("<%=j @project.pledges.update_all(:amount) %>");
+
+// render(:partial => 'projects/pledges')

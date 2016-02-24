@@ -19,6 +19,8 @@ class PledgesController < ApplicationController
     @pledge = Pledge.find(params[:id])
   end
 
+
+
   private
 
   def pledge_params
