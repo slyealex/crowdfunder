@@ -7,8 +7,8 @@
 
 <h1>GOAL: $<%= @project.goal %></h1>
 
-<h2>Amount raised:</h2>
-<p>$<%= @project.pledges.sum(:amount) %></p><br>
+<h2 id="total-amount">Amount raised: $<%= @project.total_amount %></h2>
+
 
 <div class="reward">
   <%= render 'reward' %>

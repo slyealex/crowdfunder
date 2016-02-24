@@ -24,11 +24,15 @@ class PledgesController < ApplicationController
   private
 
   def pledge_params
-    params.require(:pledge).permit(:amount, :user_id, :project_id)
+    params.require(:pledge).permit(:amount, :user_id, :project_id, :reward_id)
   end
 
   def load_project
     @project = Project.find(params[:project_id])
+  end
+
+  def get_reward
+    @reward = Reward.find(params[:reward_id])
   end
 
 end
