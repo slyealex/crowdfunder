@@ -10,12 +10,5 @@
 
 
 <div class="reward">
-  <%= render 'reward' %>
-
-  <div id="pledge-list">
-    <%= render partial: 'pledges' %>
-  </div>
+  <%= render 'reward', locals: {pledge: @pledge} %>
 </div>
-
-<!-- <%= link_to 'Edit', edit_project_path(@project) %> | -->
-<!-- <%= link_to 'Back to all Projects', projects_path %> -->

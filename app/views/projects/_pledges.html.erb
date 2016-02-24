@@ -1,9 +1,4 @@
-<%= form_for [@project, @pledge], remote: true do |f| %>
-
-  <div class="field">
-    <%= f.label :amount %><br/>
-    <%= f.number_field :amount %>
-  </div>
+<%= form_for [@project, reward, pledge], remote: true do |f| %>
 
   <div class="actions">
     <%= f.submit 'Make Pledge' %>

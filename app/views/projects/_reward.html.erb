@@ -1,8 +1,12 @@
 <% @project.rewards.each do |reward| %>
- <div class="reward">
-  <!-- add rewards in nice presentable way rewards.name  -->
-  <h3><%= reward.name %></h3>
-  <p><%= reward.description %></p>
-  <p><%= reward.amount %></p>
- </div>
+   <div class="reward">
+    <!-- add rewards in nice presentable way rewards.name  -->
+    <h3><%= reward.name %></h3>
+    <p><%= reward.description %></p>
+    <p><%= reward.amount %></p>
+   </div>
+
+   <div id="pledge-list">
+     <%= render partial: 'pledges', locals: {reward: reward, pledge: @pledge} %>
+   </div>
 <% end %>
