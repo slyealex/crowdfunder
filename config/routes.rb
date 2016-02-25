@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
-  resources :categories
+  resources :categories, only: [:index, :show]
 end
