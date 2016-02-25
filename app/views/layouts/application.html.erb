@@ -9,10 +9,18 @@
 <body>
 
   <ul>
-    <li><%= link_to 'Home (List of All Projects)', projects_path %></li>
+    <li><%= link_to 'All Projects', projects_path %></li>
     <li><%= link_to 'New Project', new_project_path %></li>
     <li><%= link_to 'All Users', users_path %></li>
     <li><%= link_to 'New User', new_user_path %></li>
+
+    <li><% if current_user %>
+
+        <%= link_to 'My Account', user_path(current_user)  %>
+        <% end %>
+    </li>
+
+
     <li>
       <p class="userinfo">
         <% if current_user %>

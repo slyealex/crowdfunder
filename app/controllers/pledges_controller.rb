@@ -2,7 +2,11 @@ class PledgesController < ApplicationController
   before_action :load_project
 
   def create
+
     @pledge = @project.pledges.build(pledge_params)
+    @pledge.user = current_user
+    # To let project know that pledge is done be current user. Before that the pleadge
+    # were not assigned to a particular user.
 
     respond_to do |format|
       if @pledge.save
