@@ -1,8 +1,8 @@
-<%= form_for [@project, @pledge], remote: true do |f| %>
+<%= form_for [@project, reward, pledge], remote: true do |f| %>
 
   <div class="field">
-    <%= f.label :amount %><br/>
-    <%= f.number_field :amount %>
+    <%= f.label :amount %>
+    <%= f.select :amount, [reward.amount], id: 'pledge-field' %>
   </div>
 
   <div class="actions">

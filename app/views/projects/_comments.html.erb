@@ -1,0 +1,10 @@
+<% @project.comments.each do |comment| %>
+  <div class="comment">
+    <div class="poster">
+      Posted by <%= comment.user %> on <%= comment.created_at %>
+    </div>
+    <p class="comment" class="container">
+      <%= comment.comment %>
+    </p>
+  </div>
+<% end %>
