@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   # has_many :project is a perspective of owner
   has_many :pledges
 
-  has_many :backed_projects, class_name: Project, through: :pledges, source: :project
+  has_many :backed_projects, -> { distinct }, class_name: Project, through: :pledges, source: :project
   # source: :project this association is called project from pledges poit of view".
 # A perspective of backer. Added new association :backed_projects, cause projects we has before directly was
 # from the owners point of view. From the backers point of view we have many projects

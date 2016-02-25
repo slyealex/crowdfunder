@@ -6,16 +6,24 @@
 </div>
 
 <!-- backed_project is defined as a new association in user.rb and means a
-a project from a perspective of a backer, not owner
+a project from a perspective of a backer, not owner  <!-->
 
+<h1>All projects backed by you:</h1>
 <% if @user.backed_projects.any? %>
  <ul>
    <% @user.backed_projects.each do |project| %>
      <li class="backed_projects">
        <%= link_to project.name, project_path(project) %>
+       <!-- <%= project.pledges.sum :amount %> -->
+       <%= project.pledges.where(user_id: @user.id).sum :amount %>
      </li>
    <% end %>
  </ul>
 <% else %>
  <h2>No projects yet</h2>
 <% end %>
+
+<div>
+  Total amount of pledges made:
+  <%= @user.pledges.sum :amount %>
+</div>

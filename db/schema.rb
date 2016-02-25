@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160224185159) do
+ActiveRecord::Schema.define(version: 20160225210947) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "Art"
+    t.string   "Comics"
+    t.string   "Crafts"
+    t.string   "Dance"
+    t.string   "Design"
+    t.string   "Fashion"
+    t.string   "Film"
+    t.string   "Video"
+    t.string   "Food"
+    t.string   "Games"
+    t.string   "Journalism"
+    t.string   "Music"
+    t.string   "Photography"
+    t.string   "Publishing"
+    t.string   "Technology"
+    t.string   "Theater"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "pledges", force: :cascade do |t|
     t.integer  "amount"

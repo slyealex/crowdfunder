@@ -9,6 +9,8 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @project.user = current_user
+    # To let project know that project is backed by a current user.
 
     if @project.save
       redirect_to projects_path, notice: "You have made a project!"
