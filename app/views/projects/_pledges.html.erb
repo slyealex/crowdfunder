@@ -1,5 +1,10 @@
 <%= form_for [@project, reward, pledge], remote: true do |f| %>
 
+  <div class="field">
+    <%= f.label :amount %>
+    <%= f.select :amount, [reward.amount], id: 'pledge-field' %>
+  </div>
+
   <div class="actions">
     <%= f.submit 'Make Pledge' %>
   </div>
