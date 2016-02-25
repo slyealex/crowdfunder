@@ -40,6 +40,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
 
     @pledge = @project.pledges.build
+    @comment = @project.comments.build
   end
 
   private
