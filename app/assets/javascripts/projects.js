@@ -1,5 +1,6 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
+<<<<<<< HEAD
 $(document).ready(function() {
 function getTimeRemaining(endtime) {
   var t = Date.parse(endtime) - Date.parse(new Date());
@@ -43,4 +44,15 @@ function initializeClock(id, endtime) {
 
 var deadline = new Date(Date.parse(new Date()) + 30 * 24 * 60 * 60 * 1000);
 initializeClock('clockdiv', deadline);
-});
+
+$(document).on('ready page:load', function() {
+
+  $('#search-form').on('click', function() {
+    var searchValue = $('#search').val();
+
+    $.ajax({
+      url: '/projects?search=' + $('searchValue'),
+      type: 'GET',
+      dataType: 'script'
+    });
+  });

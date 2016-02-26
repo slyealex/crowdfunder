@@ -1,6 +1,11 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all
+    @projects = if params[:search]
+      Project.where("LOWER(name) LIKE LOWER(?)", "%#{params[:search]}%")
+    else
+      @projects = Project.all
+    end
+
   end
 
   def new
@@ -35,6 +40,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
 
     @pledge = @project.pledges.build
+    @comment = @project.comments.build
   end
 
   private
