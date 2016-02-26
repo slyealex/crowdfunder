@@ -15,6 +15,27 @@
 </div><br>
 
 
+
+
+<div id="clockdiv">
+  <div>
+    <span class="days"></span>
+    <div class="smalltext">Days</div>
+  </div>
+  <div>
+    <span class="hours"></span>
+    <div class="smalltext">Hours</div>
+  </div>
+  <div>
+    <span class="minutes"></span>
+    <div class="smalltext">Minutes</div>
+  </div>
+  <div>
+    <span class="seconds"></span>
+    <div class="smalltext">Seconds</div>
+  </div>
+</div>
+
 <div class="reward">
   <%= render 'reward', locals: {pledge: @pledge} %>
 </div>
@@ -24,7 +45,12 @@
   <%= render partial: "comments" %>
 </div>
 
+
+<!-- <%= link_to 'Edit', edit_project_path(@project) %> | -->
+<!-- <%= link_to 'Back to all Projects', projects_path %> -->
+
 <div>
+
   <% if current_user %>
     <h4>Comment on this Project</h4>
 
@@ -41,4 +67,24 @@
 
     <% end %>
   <% end %>
+
+  <p>Project Created by You:</p>
+    <!-- if current user.backed_project = true display yes -->
+    <% if current_user && (current_user.id == @project.user_id) %>
+      <p>Yes</p>
+    <% else %>
+      <p>No </p>
+    <% end %>
+</div>
+
+<div>
+  <p>Project Backed by You:</p>
+    <!-- if current user.backed_project = true display yes -->
+    <% if current_user && (current_user.backed_projects.include?(@project)) %>
+
+
+      <p>Yes</p>
+    <% else %>
+      <p>No </p>
+    <% end %>
 </div>
