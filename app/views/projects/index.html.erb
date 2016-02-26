@@ -4,13 +4,13 @@
 <!-- <%= link_to 'New Project', new_project_path %> -->
 
 <% if @projects.any? %>
- <ul>
+ <ol>
    <% @projects.each do |project| %>
      <li class="project">
        <%= link_to project.name, project_path(project) %>
      </li>
    <% end %>
- </ul>
+ </ol>
 <% else %>
  <h2>No projects yet</h2>
 <% end %>
