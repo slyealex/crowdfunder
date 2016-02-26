@@ -1,6 +1,6 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
-<<<<<<< HEAD
+
 $(document).ready(function() {
 function getTimeRemaining(endtime) {
   var t = Date.parse(endtime) - Date.parse(new Date());
@@ -39,7 +39,7 @@ function initializeClock(id, endtime) {
 
   updateClock();
   var timeinterval = setInterval(updateClock, 1000);
-}
+};
 
 
 var deadline = new Date(Date.parse(new Date()) + 30 * 24 * 60 * 60 * 1000);
