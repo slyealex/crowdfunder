@@ -25,6 +25,7 @@
 </div>
 
 <div>
+
   <% if current_user %>
     <h4>Comment on this Project</h4>
 
@@ -41,4 +42,24 @@
 
     <% end %>
   <% end %>
+
+  <p>Project Created by You:</p>
+    <!-- if current user.backed_project = true display yes -->
+    <% if current_user && (current_user.id == @project.user_id) %>
+      <p>Yes</p>
+    <% else %>
+      <p>No </p>
+    <% end %>
+</div>
+
+<div>
+  <p>Project Backed by You:</p>
+    <!-- if current user.backed_project = true display yes -->
+    <% if current_user && (current_user.backed_projects.include?(@project)) %>
+
+
+      <p>Yes</p>
+    <% else %>
+      <p>No </p>
+    <% end %>
 </div>

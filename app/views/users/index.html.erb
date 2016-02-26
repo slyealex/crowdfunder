@@ -1,0 +1,13 @@
+<p>List of all Users</p>
+
+<% if @users.any? %>
+ <ul>
+   <% @users.each do |user| %>
+     <li class="project">
+       <%= link_to user.name, user_path(user) %>
+     </li>
+   <% end %>
+ </ul>
+<% else %>
+ <h2>No users yet</h2>
+<% end %>
